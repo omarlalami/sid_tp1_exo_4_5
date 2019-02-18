@@ -13,12 +13,17 @@ public class ServeurBanque {
 	
 	public static void main(String[] args) {
 		
+		//	A LIRE ! createRegistry PASSEZ LE PORT AFFICHER DAS LA CONSOLE !
+		// NE PAS OUBLIER DE DONNER LE PORT A Client.java AUSSI
+		
 		try {
 			
 			BanqueImpl instance = new BanqueImpl(); // on creer objet
 			Banque instance_adapte = (Banque) UnicastRemoteObject.exportObject(instance,0);	// ici on creer genre lobjet distant
 
-			Registry registre = LocateRegistry.getRegistry();	// on recupere le resgitre
+			//Registry registre = LocateRegistry.getRegistry();	// on recupere le resgitre
+			Registry registre = LocateRegistry.createRegistry(8875);
+
 			registre.bind("AccesBanqueDistance",instance_adapte);	// on associe notre instante au nom CalculMathObject dans le registre
 			
 			System.err.println("serveur pret"); // sa nous met en rouge

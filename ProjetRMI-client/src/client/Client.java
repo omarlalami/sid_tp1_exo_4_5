@@ -17,7 +17,8 @@ public class Client {
 		
 		try {
 			
-			registre = LocateRegistry.getRegistry();
+			//registre = LocateRegistry.getRegistry();
+			registre = LocateRegistry.getRegistry(8875);
 			// on recupere le registre
 
 			Banque instance_adapte = (Banque) registre.lookup("AccesBanqueDistance");

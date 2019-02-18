@@ -1,6 +1,8 @@
 package objetsDistants;
 
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -53,7 +55,19 @@ public class BanqueImpl implements Banque{
 		
 		idToken_class++;
 		
-		authServeur = new AuthentificationServeurImpl();
+		Registry registre;
+		
+		try {
+			System.out.println("serveur baque etablie liaison a serveur autentification ...");
+			
+			registre = LocateRegistry.getRegistry(8859);
+			authServeur = (AuthentificationServeur) registre.lookup("AuthentificationServeur");
+			
+			System.out.println("serveur baque etablie liaison a serveur autentification ... OK");
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		return a;
 	}
