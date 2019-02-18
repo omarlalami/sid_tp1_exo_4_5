@@ -9,7 +9,7 @@ import objetsDistants.BanqueImpl;
 
 
 
-public class ServeurBanque {
+public class ServeurBanque2 {
 	
 	public static void main(String[] args) {
 		
@@ -22,11 +22,11 @@ public class ServeurBanque {
 			Banque instance_adapte = (Banque) UnicastRemoteObject.exportObject(instance,0);	// ici on creer genre lobjet distant
 
 			//Registry registre = LocateRegistry.getRegistry();	// on recupere le resgitre
-			Registry registre = LocateRegistry.createRegistry(11344);
+			Registry registre = LocateRegistry.createRegistry(8875);
 
-			registre.bind("AccesBanqueDistance",instance_adapte);	// on associe notre instante au nom CalculMathObject dans le registre
+			registre.bind("AccesBanque_2_Distance",instance_adapte);	// on associe notre instante au nom CalculMathObject dans le registre
 			
-			System.err.println("serveur banque 1 pret"); // sa nous met en rouge
+			System.err.println("serveur banque 2 pret"); // sa nous met en rouge
 		}
 		catch(Exception e){
 			e.getStackTrace();

@@ -20,11 +20,11 @@ public class ServeurAuth {
 			AuthentificationServeur instance_adapte = (AuthentificationServeur) UnicastRemoteObject.exportObject(instance,0); 
 			
 			//Registry registre = LocateRegistry.getRegistry();	// on recupere le resgitre
-			Registry registre = LocateRegistry.createRegistry(8859);
+			Registry registre = LocateRegistry.createRegistry(11296);
 			
 			registre.bind("AuthentificationServeur",instance_adapte);	// on associe notre instante au nom CalculMathObject dans le registre
 
-			System.err.println("serveur auith pret"); // sa nous met en rouge
+			System.err.println("serveur auth pret"); // sa nous met en rouge
 			
 		}catch(Exception e) {
 			e.getStackTrace();

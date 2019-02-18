@@ -60,7 +60,7 @@ public class BanqueImpl implements Banque{
 		try {
 			System.out.println("serveur baque etablie liaison a serveur autentification ...");
 			
-			registre = LocateRegistry.getRegistry(8859);
+			registre = LocateRegistry.getRegistry(11296);
 			authServeur = (AuthentificationServeur) registre.lookup("AuthentificationServeur");
 			
 			System.out.println("serveur baque etablie liaison a serveur autentification ... OK");

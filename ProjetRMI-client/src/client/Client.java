@@ -60,7 +60,6 @@ public class Client {
 			
 			System.out.println("compte "+id_compte+" solde actuel : " + instance_adapte.getSolde(id_compte,at2));
 
-			
 		}
 		catch(Exception e) {
 			e.getStackTrace();
