@@ -64,6 +64,8 @@ public class Client2 {
 								// A VOIR VOMMENT GERER LE VIREMENT CAR C'EST PAS LA MEME BANQUE
 								// CA IMPLIQUE QUE C'EST PAS LA MEME LISTE DE COMPTES
 			
+			// ici c'est pas fini ....
+			
 			registre2 = LocateRegistry.getRegistry(11344);
 			// on recupere le registre
 	
